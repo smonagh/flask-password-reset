@@ -1,0 +1,22 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Flask Password Reset</title>
+<nav>
+  <h1>Flask Password Reset</h1>
+  <ul>
+    {% if g.user %}
+      <li><span>{{ g.user['username'] }}</span>
+      <li><a href="{{ url_for('app_routes.logout') }}">Log Out</a>
+    {% else %}
+      <li><a href="{{ url_for('app_routes.register') }}">Register</a>
+      <li><a href="{{ url_for('app_routes.login') }}">Log In</a>
+      <li><a href="{{ url_for('app_routes.reset')}}"> Reset Password </a>
+      <li><a href="{{ url_for('app_routes.home_page') }}"> Home</a>
+    {% endif %}
+  </ul>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% block content %}{% endblock %}
+</section>

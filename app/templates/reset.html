@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Reset Password{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <p>
+    Please enter the email that you registered with.
+    You will be sent an email that will allow you to reset your password.
+  </p>
+
+  <form method="post">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}
